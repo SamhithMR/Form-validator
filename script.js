@@ -9,9 +9,10 @@ let passwordInputLabel = document.querySelector('.ic3 label');
 let cPasswordInputLabel = document.querySelector('.ic4 label');
 let label = document.querySelectorAll('label')
 
-submitButton.addEventListener("click", () => (validateForm()));
+submitButton.addEventListener("click", (e) => (validateForm(e)));
 
-function validateForm() {
+function validateForm(e) {
+    e.preventDefault();
     clearAllLabels();
     let isValid = validateName() && validateEmail() && validatePassword() && validateConfirmPassword();
     if (isValid) {
